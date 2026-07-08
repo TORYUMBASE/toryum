@@ -1,816 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TORYUM | The Last Energy of Crypto</title>
+<meta name="description" content="TORYUM Meme Coin on Base">
 
-<title>TORYUM | Powering the Future of Memes</title>
-
-<meta name="description" content="Official TORYUM Meme Coin on Base">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-  .nav-links li a{
-padding:10px 14px;
-border-radius:999px;
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{background:#050008;color:white;font-family:Poppins,sans-serif;overflow-x:hidden}
+canvas{position:fixed;inset:0;z-index:-2}
+body::before{
+content:"";position:fixed;inset:0;z-index:-1;
+background:radial-gradient(circle at 50% 35%,rgba(147,51,234,.45),transparent 32%),
+linear-gradient(180deg,#050008,#090012 60%,#020003);
 }
-
-.nav-links li a:hover{
-background:rgba(147,51,234,.18);
-box-shadow:0 0 18px rgba(147,51,234,.45);
-}
-
-@media(max-width:768px){
 nav{
-padding:18px 6%;
-}
-
-.logo{
-font-size:28px;
-}
-
-.nav-links{
-gap:8px;
-}
-
-.nav-links li:nth-child(1),
-.nav-links li:nth-child(2),
-.nav-links li:nth-child(3){
-display:none;
-}
-
-.nav-links li a{
-font-size:16px;
-padding:9px 12px;
-border:1px solid rgba(192,132,252,.35);
-background:rgba(255,255,255,.05);
-}
-}
-}
-.premium-hero{
-position:relative;
-overflow:hidden;
-background:
-padding-top:120px;
-radial-gradient(circle at 50% 35%,rgba(168,85,247,.35),transparent 32%),
-radial-gradient(circle at 20% 80%,rgba(59,130,246,.18),transparent 25%),
-linear-gradient(180deg,#030006 0%,#08000f 60%,#050505 100%);@media(max-width:768px){
-.hero-title{
-font-size:48px !important;
-letter-spacing:1px !important;
-transform:scale(.92);
-}
-.hero-subtitle{
-font-size:26px !important;
-}
-.hero-desc{
-font-size:22px !important;
-}
-}
-}
-
-.premium-hero::before{
-content:"";
-position:absolute;
-inset:-50%;
-background:
-repeating-linear-gradient(
-120deg,
-transparent 0px,
-transparent 90px,
-rgba(168,85,247,.08) 92px,
-transparent 96px
-);
-animation:moveGrid 18s linear infinite;
-}
-
-@keyframes moveGrid{
-0%{transform:translateY(0) rotate(0deg);}
-100%{transform:translateY(120px) rotate(4deg);}
-}
-
-.energy-orb{
-position:absolute;
-width:320px;
-height:320px;
-border-radius:50%;
-background:
-radial-gradient(circle,#fff 0%,#c084fc 10%,#7e22ce 35%,transparent 70%);
-filter:blur(4px);
-opacity:.55;
-animation:pulseOrb 4s ease-in-out infinite;
-}
-
-@keyframes pulseOrb{
-0%,100%{transform:scale(1);opacity:.45;}
-50%{transform:scale(1.15);opacity:.75;}
-}
-
-.hero-badge{
-z-index:2;
-padding:10px 22px;
-border:1px solid rgba(192,132,252,.5);
-border-radius:999px;
-background:rgba(255,255,255,.06);
-backdrop-filter:blur(14px);
-color:#d8b4fe;
-font-weight:700;
-letter-spacing:2px;
-margin-bottom:25px;
-box-shadow:0 0 30px rgba(168,85,247,.35);
-}
-
-.hero-title{
-z-index:2;
-font-size:clamp(28px,8.5vw,82px);
-max-width:100%;
-white-space:nowrap;
-text-align:center;
-line-height:1;
-letter-spacing:1px;
-animation:heroGlow 3s ease-in-out infinite;
-}
-
-@keyframes heroGlow{
-0%,100%{
-text-shadow:0 0 20px #a855f7,0 0 60px #7e22ce;
-}
-50%{
-text-shadow:0 0 35px #d8b4fe,0 0 95px #9333ea;
-}
-}
-
-.hero-subtitle{
-z-index:2;
-font-family:Orbitron;
-font-size:clamp(24px,5vw,54px);
-margin-top:25px;
-color:#fff;
-letter-spacing:4px;
-}
-
-.hero-desc{
-z-index:2;
-font-size:20px;
-margin-top:25px;
-color:#cfcfcf;
-max-width:760px;
-}
-
-.scroll-down{
-z-index:2;
-position:absolute;
-bottom:35px;
-font-size:13px;
-letter-spacing:3px;
-color:#c084fc;
-animation:bounce 2s infinite;
-}
-
-@keyframes bounce{
-0%,100%{transform:translateY(0);opacity:.7;}
-50%{transform:translateY(10px);opacity:1;}
-}
-
-@media(max-width:768px){
-nav ul{display:none;}
-.hero-title{letter-spacing:3px;}
-.hero-subtitle{letter-spacing:2px;}
-}
-body{
-
-background:#050505;
-font-family:'Poppins',sans-serif;
-color:white;
-overflow-x:hidden;
-
-}
-
-canvas{
-
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
-
-}
-
-nav{
-
-position:fixed;
-top:0;
-left:0;
-width:100%;
+position:fixed;top:0;left:0;width:100%;z-index:99;
+display:flex;justify-content:space-between;align-items:center;
 padding:20px 10%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,.35);
-backdrop-filter:blur(15px);
-z-index:999;
-
+background:rgba(0,0,0,.45);backdrop-filter:blur(18px);
+border-bottom:1px solid rgba(168,85,247,.18)
 }
-
 .logo{
-
-font-size:32px;
-font-family:Orbitron;
-font-weight:900;
-color:#b66dff;
-letter-spacing:3px;
-text-shadow:0 0 25px #8d3fff;
-
+font-family:Orbitron;font-size:34px;font-weight:900;letter-spacing:4px;
+color:#b66dff;text-shadow:0 0 25px #9333ea
 }
-
-nav ul{
-
-display:flex;
-gap:35px;
-list-style:none;
-
+.nav-links{display:flex;gap:14px;list-style:none;align-items:center}
+.nav-links a{
+color:white;text-decoration:none;width:48px;height:48px;
+display:flex;align-items:center;justify-content:center;
+border-radius:50%;border:1px solid rgba(192,132,252,.35);
+background:rgba(255,255,255,.05);font-size:20px;
+transition:.3s
 }
-
-nav ul li a{
-
-color:white;
-text-decoration:none;
-transition:.35s;
-
-}
-
-nav ul li a:hover{
-
-color:#b66dff;
-
-}
+.nav-links a:hover{background:#9333ea;box-shadow:0 0 25px #9333ea;transform:translateY(-3px)}
 
 .hero{
-
-height:100vh;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
-text-align:center;
-
-padding:20px;
-
+min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+text-align:center;padding:150px 22px 70px;position:relative;overflow:hidden
 }
+.hero::before{
+content:"";position:absolute;inset:-30%;
+background:repeating-linear-gradient(120deg,transparent 0 90px,rgba(168,85,247,.08) 92px,transparent 96px);
+animation:gridMove 18s linear infinite
+}
+@keyframes gridMove{to{transform:translateY(140px) rotate(4deg)}}
 
+.badge{
+position:relative;z-index:2;margin-bottom:35px;padding:13px 28px;border-radius:999px;
+border:1px solid rgba(192,132,252,.55);background:rgba(255,255,255,.06);
+backdrop-filter:blur(12px);font-family:Orbitron;font-weight:700;
+letter-spacing:3px;color:#e9d5ff;box-shadow:0 0 30px rgba(147,51,234,.45)
+}
 .hero h1{
-
-font-size:92px;
-
-font-family:Orbitron;
-
-font-weight:900;
-
-color:#d4b2ff;
-
-text-shadow:
-
-0 0 20px #a855f7,
-
-0 0 50px #9333ea,
-
-0 0 90px #7e22ce;
-
+position:relative;z-index:2;font-family:Orbitron;font-size:clamp(48px,11vw,120px);
+letter-spacing:3px;line-height:1;color:#d8b4fe;
+text-shadow:0 0 25px #9333ea,0 0 70px #7e22ce;
+animation:glow 3s ease-in-out infinite
 }
-
+@keyframes glow{
+50%{text-shadow:0 0 35px #fff,0 0 95px #9333ea}
+}
+.hero h2{
+position:relative;z-index:2;margin-top:32px;font-family:Orbitron;
+font-size:clamp(27px,6vw,58px);line-height:1.25;letter-spacing:3px
+}
 .hero p{
-
-margin-top:20px;
-
-font-size:24px;
-
-max-width:750px;
-
-color:#ddd;
-
+position:relative;z-index:2;margin-top:30px;font-size:clamp(20px,5vw,32px);
+max-width:780px;color:#e5e5e5;line-height:1.65
 }
-
-.buttons{
-
-margin-top:45px;
-
-display:flex;
-
-gap:20px;
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-}
-
+.buttons{position:relative;z-index:2;margin-top:50px;display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
 .btn{
-
-padding:18px 45px;
-
-border-radius:50px;
-
-font-size:18px;
-
-text-decoration:none;
-
-font-weight:bold;
-
-transition:.35s;
-
+text-decoration:none;color:white;padding:20px 52px;border-radius:999px;
+font-weight:800;font-size:18px;transition:.3s;min-width:240px
 }
+.buy{background:linear-gradient(135deg,#9333ea,#c026d3);box-shadow:0 0 35px rgba(147,51,234,.8)}
+.buy:hover{transform:translateY(-5px);box-shadow:0 0 60px #9333ea}
+.telegram{border:2px solid #9333ea;background:rgba(0,0,0,.35)}
+.telegram:hover{background:#9333ea;transform:translateY(-5px)}
 
-.buy{
-
-background:#9333ea;
-
-color:white;
-
-box-shadow:0 0 35px #9333ea;
-
-}
-
-.buy:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 0 55px #9333ea;
-
-}
-
-.telegram{
-
-border:2px solid #9333ea;
-
-color:white;
-
-}
-
-.telegram:hover{
-
-background:#9333ea;
-
-transform:translateY(-5px);
-
-}
-
-section{
-
-padding:120px 10%;
-
-}
-
+section{padding:95px 10%}
 .title{
-
-font-size:46px;
-
-font-family:Orbitron;
-
-margin-bottom:50px;
-
-text-align:center;
-
-color:#c084fc;
-
+font-family:Orbitron;text-align:center;font-size:clamp(32px,7vw,54px);
+color:#c084fc;margin-bottom:45px
 }
-
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:25px}
 .card{
-
-background:rgba(255,255,255,.05);
-
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:25px;
-
-padding:35px;
-
-backdrop-filter:blur(18px);
-
-box-shadow:0 0 35px rgba(147,51,234,.25);
-
+background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);
+border-radius:26px;padding:32px;backdrop-filter:blur(16px);
+box-shadow:0 0 35px rgba(147,51,234,.22)
 }
+.card h3{color:#c084fc;font-size:24px;margin-bottom:14px}
+.card p{color:#d1d5db;font-size:18px;line-height:1.7}
 
+footer{text-align:center;padding:70px 20px;background:#050005;border-top:1px solid rgba(255,255,255,.08)}
+footer h2{font-family:Orbitron;color:#b66dff;font-size:42px}
+
+@media(max-width:768px){
+nav{padding:18px 7%}
+.logo{font-size:30px}
+.nav-links{gap:10px}
+.nav-links a{width:46px;height:46px;font-size:19px}
+.hero{padding-top:145px}
+.hero h1{font-size:52px;letter-spacing:2px}
+.hero h2{font-size:33px}
+.btn{width:100%;max-width:380px}
+}
 </style>
-
 </head>
 
 <body>
-
 <canvas id="stars"></canvas>
 
 <nav>
-
-<div class="logo">
-
-TORYUM
-
-</div>
-
-<ul>
+<div class="logo">TORYUM</div>
 <ul class="nav-links">
-  <li><a href="#about">About</a></li>
-  <li><a href="#tokenomics">Tokenomics</a></li>
-  <li><a href="#roadmap">Roadmap</a></li>
-  <li><a href="https://x.com/TORYUMBASE" target="_blank">𝕏</a></li>
-  <li><a href="https://t.me/+1pIbr2fhpJ41Mjhk" target="_blank">TG</a></li>
+<li><a href="https://x.com/TORYUMBASE" target="_blank" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></li>
+<li><a href="https://t.me/+1pIbr2fhpJ41Mjhk" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a></li>
 </ul>
-
 </nav>
 
-<section class="hero premium-hero">
-
-  <div class="energy-orb"></div>
-  <div class="hero-badge">⚛️ BORN ON BASE</div>
-
-  <h1 class="hero-title">TORYUM</h1>
-
-  <h2 class="hero-subtitle">
-    THE LAST ENERGY OF CRYPTO
-  </h2>
-
-  <p class="hero-desc">
-    Born on Base. Fueled by Community. Powered by Memes.
-  </p>
-
-  <div class="buttons">
-    <a href="#" class="btn buy">BUY ON BASE</a>
-    <a href="https://t.me/+1pIbr2fhpJ41Mjhk"
-   class="btn telegram"
-   target="_blank"
-   rel="noopener noreferrer">
-JOIN TELEGRAM
-</a>
-
-  <div class="scroll-down">↓ ENTER THE ENERGY ↓</div>
-
-</section>
-</section>
-<section id="about">
-
-<h2 class="title">
-
-⚛️ About TORYUM
-
-</h2>
-
-<div class="card">
-
-<h3 style="font-size:34px;margin-bottom:25px;color:#b66dff;font-family:Orbitron;">
-
-Born From Energy
-
-</h3>
-
-<p style="font-size:20px;line-height:38px;color:#d8d8d8;">
-
-TORYUM is more than a meme.
-
-It represents limitless energy, community power and the future of decentralized culture.
-
-No fake promises.
-
-No impossible roadmap.
-
-Just community.
-
-Just memes.
-
-Just energy.
-
-</p>
-
+<section class="hero">
+<div class="badge">⚛️ BORN ON BASE</div>
+<h1>TORYUM</h1>
+<h2>THE LAST ENERGY<br>OF CRYPTO</h2>
+<p>Born on Base. Fueled by Community. Powered by Memes.</p>
+<div class="buttons">
+<a href="#" class="btn buy" onclick="alert('TORYUM is launching soon on Base. Follow X and Telegram for the official launch.');return false;">BUY ON BASE</a>
+<a href="https://t.me/+1pIbr2fhpJ41Mjhk" target="_blank" class="btn telegram">JOIN TELEGRAM</a>
 </div>
-
 </section>
 
-
+<section id="about">
+<h2 class="title">WHY TORYUM?</h2>
+<div class="grid">
+<div class="card"><h3>⚛️ Energy Theme</h3><p>TORYUM is built around the idea of infinite meme energy and community culture.</p></div>
+<div class="card"><h3>🚀 Community Driven</h3><p>No fake promises. No unrealistic roadmap. Just memes, energy and people.</p></div>
+<div class="card"><h3>🔵 Built on Base</h3><p>Fast, simple and ready for the Base ecosystem.</p></div>
+</div>
+</section>
 
 <section id="tokenomics">
-
-<h2 class="title">
-
-📊 TOKENOMICS
-
-</h2>
-
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:35px;">
-
-<div class="card">
-
-<h3 style="color:#b66dff;">Supply</h3>
-
-<h1 style="margin-top:15px;font-size:48px;">1B</h1>
-
+<h2 class="title">TOKENOMICS</h2>
+<div class="grid">
+<div class="card"><h3>Total Supply</h3><p>1,000,000,000 TORYUM</p></div>
+<div class="card"><h3>Creator Allocation</h3><p>5%</p></div>
+<div class="card"><h3>Network</h3><p>Base</p></div>
+<div class="card"><h3>Tax</h3><p>0%</p></div>
 </div>
-
-<div class="card">
-
-<h3 style="color:#b66dff;">Network</h3>
-
-<h1 style="margin-top:15px;font-size:48px;">BASE</h1>
-
-</div>
-
-<div class="card">
-
-<h3 style="color:#b66dff;">Creator</h3>
-
-<h1 style="margin-top:15px;font-size:48px;">5%</h1>
-
-</div>
-
-<div class="card">
-
-<h3 style="color:#b66dff;">Tax</h3>
-
-<h1 style="margin-top:15px;font-size:48px;">0%</h1>
-
-</div>
-
-</div>
-
 </section>
-
-
 
 <section id="roadmap">
-
-<h2 class="title">
-
-🚀 ROADMAP
-
-</h2>
-
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;">
-
-<div class="card">
-
-<h2 style="color:#b66dff;">Phase 1</h2>
-
-<br>
-
-✅ Launch
-
-<br><br>
-
-✅ Website
-
-<br><br>
-
-✅ Community
-
+<h2 class="title">ROADMAP</h2>
+<div class="grid">
+<div class="card"><h3>Phase 1</h3><p>Launch website, X, Telegram and community setup.</p></div>
+<div class="card"><h3>Phase 2</h3><p>Base launch, memes, community growth and Dex visibility.</p></div>
+<div class="card"><h3>Phase 3</h3><p>Multi-chain vision, partnerships and long-term culture.</p></div>
 </div>
-
-<div class="card">
-
-<h2 style="color:#b66dff;">Phase 2</h2>
-
-<br>
-
-⬜ Coin Listing
-
-<br><br>
-
-⬜ Marketing
-
-<br><br>
-
-⬜ Partnerships
-
-</div>
-
-<div class="card">
-
-<h2 style="color:#b66dff;">Phase 3</h2>
-
-<br>
-
-⬜ Multi-chain
-
-<br><br>
-
-⬜ CEX Goals
-
-<br><br>
-
-⬜ Global Community
-
-</div>
-
-</div>
-
 </section>
 
-
-
-<section id="faq">
-
-<h2 class="title">
-
-❓ FAQ
-
-</h2>
-
-<div class="card">
-
-<h2>
-
-What is TORYUM?
-
-</h2>
-
-<br>
-
-<p>
-
-TORYUM is a community-driven meme coin inspired by one of the world's most powerful energy elements.
-
-</p>
-
-<br><br>
-
-<h2>
-
-Which Network?
-
-</h2>
-
-<br>
-
-<p>
-
-Base Network.
-
-</p>
-
-<br><br>
-
-<h2>
-
-Taxes?
-
-</h2>
-
-<br>
-
-<p>
-
-0% Buy
-
-<br>
-
-0% Sell
-
-</p>
-
-</div>
-
-</section>
-
-
-
-<section>
-
-<h2 class="title">
-
-🌍 JOIN THE COMMUNITY
-
-</h2>
-
-<div style="display:flex;justify-content:center;gap:25px;flex-wrap:wrap;">
-
-<a class="btn buy" href="https://x.com/TORYUMBASE" target="_blank">
-
-𝕏 Twitter
-
-</a>
-
-<a class="btn telegram" href="https://t.me/+1pIbr2fhpJ41Mjhk" target="_blank">
-
-Telegram
-
-</a>
-
-</div>
-
-</section>
-<footer style="padding:80px 20px;text-align:center;background:#080808;border-top:1px solid rgba(255,255,255,.08);">
-
-<h2 style="font-family:Orbitron;font-size:42px;color:#b66dff;">
-
-TORYUM
-
-</h2>
-
-<p style="margin-top:20px;color:#999;">
-
-Powering the Future of Memes
-
-</p>
-
-<br>
-
-<p style="color:#777;">
-
-Powered by Base
-
-</p>
-
-<br>
-
-<p style="font-size:13px;color:#555;">
-
-© 2026 TORYUM. All Rights Reserved.
-
-</p>
-
+<footer>
+<h2>TORYUM</h2>
+<p style="color:#999;margin-top:15px">The Last Energy of Crypto</p>
+<p style="color:#666;margin-top:15px">© 2026 TORYUM • Powered by Base</p>
 </footer>
 
 <script>
-
 const canvas=document.getElementById("stars");
-
 const ctx=canvas.getContext("2d");
-
-canvas.width=window.innerWidth;
-
-canvas.height=window.innerHeight;
-
 let stars=[];
-
-for(let i=0;i<250;i++){
-
-stars.push({
-
-x:Math.random()*canvas.width,
-
-y:Math.random()*canvas.height,
-
-r:Math.random()*2,
-
-v:Math.random()*0.6+0.2
-
-});
-
+function resize(){canvas.width=innerWidth;canvas.height=innerHeight}
+resize();addEventListener("resize",resize);
+for(let i=0;i<220;i++){
+stars.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*2+0.3,v:Math.random()*0.7+0.15});
 }
-
 function animate(){
-
 ctx.clearRect(0,0,canvas.width,canvas.height);
-
-ctx.fillStyle="#ffffff";
-
+ctx.fillStyle="white";
 stars.forEach(s=>{
-
-ctx.beginPath();
-
-ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-
-ctx.fill();
-
+ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill();
 s.y+=s.v;
-
-if(s.y>canvas.height){
-
-s.y=0;
-
-s.x=Math.random()*canvas.width;
-
-}
-
+if(s.y>canvas.height){s.y=0;s.x=Math.random()*canvas.width}
 });
-
 requestAnimationFrame(animate);
-
 }
-
 animate();
-
-window.addEventListener("resize",()=>{
-
-canvas.width=window.innerWidth;
-
-canvas.height=window.innerHeight;
-
-});
-
 </script>
-
 </body>
-
 </html>
