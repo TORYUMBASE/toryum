@@ -22,7 +22,120 @@ padding:0;
 box-sizing:border-box;
 scroll-behavior:smooth;
 }
+.premium-hero{
+position:relative;
+overflow:hidden;
+background:
+radial-gradient(circle at 50% 35%,rgba(168,85,247,.35),transparent 32%),
+radial-gradient(circle at 20% 80%,rgba(59,130,246,.18),transparent 25%),
+linear-gradient(180deg,#030006 0%,#08000f 60%,#050505 100%);
+}
 
+.premium-hero::before{
+content:"";
+position:absolute;
+inset:-50%;
+background:
+repeating-linear-gradient(
+120deg,
+transparent 0px,
+transparent 90px,
+rgba(168,85,247,.08) 92px,
+transparent 96px
+);
+animation:moveGrid 18s linear infinite;
+}
+
+@keyframes moveGrid{
+0%{transform:translateY(0) rotate(0deg);}
+100%{transform:translateY(120px) rotate(4deg);}
+}
+
+.energy-orb{
+position:absolute;
+width:320px;
+height:320px;
+border-radius:50%;
+background:
+radial-gradient(circle,#fff 0%,#c084fc 10%,#7e22ce 35%,transparent 70%);
+filter:blur(4px);
+opacity:.55;
+animation:pulseOrb 4s ease-in-out infinite;
+}
+
+@keyframes pulseOrb{
+0%,100%{transform:scale(1);opacity:.45;}
+50%{transform:scale(1.15);opacity:.75;}
+}
+
+.hero-badge{
+z-index:2;
+padding:10px 22px;
+border:1px solid rgba(192,132,252,.5);
+border-radius:999px;
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(14px);
+color:#d8b4fe;
+font-weight:700;
+letter-spacing:2px;
+margin-bottom:25px;
+box-shadow:0 0 30px rgba(168,85,247,.35);
+}
+
+.hero-title{
+z-index:2;
+font-size:clamp(58px,14vw,150px);
+line-height:.9;
+letter-spacing:8px;
+animation:heroGlow 3s ease-in-out infinite;
+}
+
+@keyframes heroGlow{
+0%,100%{
+text-shadow:0 0 20px #a855f7,0 0 60px #7e22ce;
+}
+50%{
+text-shadow:0 0 35px #d8b4fe,0 0 95px #9333ea;
+}
+}
+
+.hero-subtitle{
+z-index:2;
+font-family:Orbitron;
+font-size:clamp(24px,5vw,54px);
+margin-top:25px;
+color:#fff;
+letter-spacing:4px;
+}
+
+.hero-desc{
+z-index:2;
+font-size:20px;
+margin-top:25px;
+color:#cfcfcf;
+max-width:760px;
+}
+
+.scroll-down{
+z-index:2;
+position:absolute;
+bottom:35px;
+font-size:13px;
+letter-spacing:3px;
+color:#c084fc;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);opacity:.7;}
+50%{transform:translateY(10px);opacity:1;}
+}
+
+@media(max-width:768px){
+nav ul{display:none;}
+.hero-title{letter-spacing:3px;}
+.hero-subtitle{letter-spacing:2px;}
+}
 body{
 
 background:#050505;
@@ -270,32 +383,29 @@ TORYUM
 
 </nav>
 
-<section class="hero">
+<section class="hero premium-hero">
 
-<h1>TORYUM</h1>
+  <div class="energy-orb"></div>
+  <div class="hero-badge">⚛️ BORN ON BASE</div>
 
-<p>
+  <h1 class="hero-title">TORYUM</h1>
 
-Powering the Future of Memes
+  <h2 class="hero-subtitle">
+    THE LAST ENERGY OF CRYPTO
+  </h2>
 
-</p>
+  <p class="hero-desc">
+    Born on Base. Fueled by Community. Powered by Memes.
+  </p>
 
-<div class="buttons">
+  <div class="buttons">
+    <a href="#" class="btn buy">BUY ON BASE</a>
+    <a href="#" class="btn telegram">JOIN TELEGRAM</a>
+  </div>
 
-<a href="#" class="btn buy">
+  <div class="scroll-down">↓ ENTER THE ENERGY ↓</div>
 
-BUY NOW
-
-</a>
-
-<a href="#" class="btn telegram">
-
-JOIN TELEGRAM
-
-</a>
-
-</div>
-
+</section>
 </section>
 <section id="about">
 
