@@ -21,6 +21,42 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 scroll-behavior:smooth;
+  .nav-links li a{
+padding:10px 14px;
+border-radius:999px;
+}
+
+.nav-links li a:hover{
+background:rgba(147,51,234,.18);
+box-shadow:0 0 18px rgba(147,51,234,.45);
+}
+
+@media(max-width:768px){
+nav{
+padding:18px 6%;
+}
+
+.logo{
+font-size:28px;
+}
+
+.nav-links{
+gap:8px;
+}
+
+.nav-links li:nth-child(1),
+.nav-links li:nth-child(2),
+.nav-links li:nth-child(3){
+display:none;
+}
+
+.nav-links li a{
+font-size:16px;
+padding:9px 12px;
+border:1px solid rgba(192,132,252,.35);
+background:rgba(255,255,255,.05);
+}
+}
 }
 .premium-hero{
 position:relative;
@@ -386,15 +422,12 @@ TORYUM
 </div>
 
 <ul>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#tokenomics">Tokenomics</a></li>
-
-<li><a href="#roadmap">Roadmap</a></li>
-
-<li><a href="#faq">FAQ</a></li>
-
+<ul class="nav-links">
+  <li><a href="#about">About</a></li>
+  <li><a href="#tokenomics">Tokenomics</a></li>
+  <li><a href="#roadmap">Roadmap</a></li>
+  <li><a href="https://x.com/TORYUMBASE" target="_blank">𝕏</a></li>
+  <li><a href="https://t.me/+1pIbr2fhpJ41Mjhk" target="_blank">TG</a></li>
 </ul>
 
 </nav>
